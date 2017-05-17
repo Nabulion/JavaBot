@@ -5,7 +5,7 @@ import bwapi.*;
 import bwta.BWTA;
 
 
-public class TestBot1 extends DefaultBWListener {
+public class TerranBotRun extends DefaultBWListener {
 
     private Mirror mirror = new Mirror();
 
@@ -29,11 +29,8 @@ public class TestBot1 extends DefaultBWListener {
     public void onStart() {
         game = mirror.getGame();
         self = game.self();
-
         BWTA.readMap();
         BWTA.analyze();
-
-        game.setLocalSpeed(5);
 
         order = new BuildOrder(game, self);
         unitCommand = new UnitCommand(game, self);
@@ -66,6 +63,6 @@ public class TestBot1 extends DefaultBWListener {
     }
 
     public static void main(String[] args) {
-        new TestBot1().run();
+        new TerranBotRun().run();
     }
 }
