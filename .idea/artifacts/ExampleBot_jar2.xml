@@ -1,0 +1,12 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="ExampleBot:jar2">
+    <output-path>$PROJECT_DIR$/out/artifacts/ExampleBot_jar2</output-path>
+    <root id="archive" name="ExampleBot.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="E:/stuff/TerranBotReleaseJar/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="module-output" name="TerranBot" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/ExampleBot/lib/bwmirror_v2_5.zip" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

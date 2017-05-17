@@ -89,7 +89,7 @@ public class UnitCommand {
         if(!game.enemy().getUnits().isEmpty()) {
             for (Unit unit : self.getUnits()) {
                 for (Unit eunit : game.enemy().getUnits()) {
-                    if (!unit.isAttacking() && unit.getDistance(eunit) <= 50 && unit.getID() != scout) {
+                    if (!unit.isAttacking() && unit.getDistance(eunit) <= 250 && unit.getID() != scout) {
                         unit.attack(eunit, true);
                     }
                 }
