@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="TerranBot:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/TerranBot_jar</output-path>
+    <root id="archive" name="TerranBot.jar">
+      <element id="module-output" name="TerranBot" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/ExampleBot/lib/bwmirror_v2_5.zip" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

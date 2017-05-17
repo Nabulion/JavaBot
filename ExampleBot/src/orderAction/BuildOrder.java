@@ -1,6 +1,7 @@
 package orderAction;
-import tiles.BuildLocationSelector;
+
 import bwapi.*;
+import tiles.BuildLocationSelector;
 
 /**
  * Created by Christian on 02-05-2017.
@@ -48,7 +49,7 @@ public class BuildOrder {
 
     public void CreateSupplyDepot(Unit unit){
         //supplydepots are a special case since supply building is needed all game until we reach max supply (400)
-        if ((self.supplyTotal() - self.supplyUsed() <= 4) && self.supplyTotal() != 400) {
+        if ((self.supplyTotal() - self.supplyUsed() <= 4 || (self.supplyUsed() > 70 && self.supplyTotal() - self.supplyUsed() <= 10)) && self.supplyTotal() != 400) {
             game.drawTextScreen(100, 10, "BUILD STUFF");
 
             if (!orderStarted && (self.minerals() >= 100)) {

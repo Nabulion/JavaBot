@@ -1,5 +1,9 @@
 package command;
-import bwapi.*;
+
+import bwapi.Game;
+import bwapi.Player;
+import bwapi.Unit;
+import bwapi.UnitType;
 import bwta.BWTA;
 import bwta.BaseLocation;
 
@@ -72,9 +76,10 @@ public class UnitCommand {
     public void SendAttack(){
         for (Unit unit : self.getUnits()) {
             if(unit.getType() == UnitType.Terran_Marine) {
-
-                unit.attack(enemyBase.getPosition());
-
+                if (unit.isIdle()) {
+                    unit.attack(enemyBase.getPosition());
+                }
+                //if enemy units appear start attacking
                 for (Unit eunit: game.enemy().getUnits())
                 {
                     if(!unit.isAttacking()) {
@@ -85,11 +90,12 @@ public class UnitCommand {
         }
     }
 
+    //TODO simple defence method, make it smarter
     public void SendDefend(){
         if(!game.enemy().getUnits().isEmpty()) {
             for (Unit unit : self.getUnits()) {
                 for (Unit eunit : game.enemy().getUnits()) {
-                    if (!unit.isAttacking() && unit.getDistance(eunit) <= 250 && unit.getID() != scout) {
+                    if (!unit.isAttacking() && unit.getDistance(eunit) <= 400 && unit.getID() != scout) {
                         unit.attack(eunit, true);
                     }
                 }
